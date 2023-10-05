@@ -39,7 +39,7 @@ const Hero = () => {
             onClick={toggleDarkMode}
             className="black_btn"
           >
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            {darkMode ? "☀️" : "🌙"}
           </button>
 
           <button
@@ -58,7 +58,7 @@ const Hero = () => {
       </h1>
 
       <h2 className="desc">
-        Simplify your reading with Sumarize. Dive deep into the world of concise content, 
+        Simplify your reading with Sumz. Dive deep into the world of concise content, 
         as we leverage the capabilities of OpenAI GPT-4 to transform lengthy articles 
         into crystal-clear summaries.
       </h2>

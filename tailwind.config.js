@@ -5,6 +5,7 @@ export const content = [
 ];
 export const theme = {
   extend: {
+    darkMode: 'class',
     fontFamily: {
       satoshi: ["Satoshi", "sans-serif"],
       inter: ["Inter", "sans-serif"],

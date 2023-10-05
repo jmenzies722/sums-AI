@@ -26,6 +26,10 @@
   top: 0;
 }
 
+.dark .sumz-logo {
+    fill: white; /* This will change the color of the SVG to white */
+}
+
 .main:after {
   content: "";
   background-image: url("/src/assets/grid.svg");
@@ -38,25 +42,35 @@
   filter: invert(1);
 }
 
+/* Dark Mode styles */
 .dark {
     background-color: #000;
-  }
-  
-  .dark .text-black, .dark .text-gray-600, .dark .text-gray-400, .dark .text-blue-700, .dark .font-inter, .dark .font-satoshi {
+}
+
+.dark .main:before {
+    background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #000 100%);
+}
+
+.dark .gradient {
+    opacity: 0.05; /* Reduce the opacity of the gradient to make it much subtle in dark mode */
+}
+
+.dark .text-black, .dark .text-gray-600, .dark .text-gray-400, .dark .text-blue-700, .dark .font-inter, .dark .font-satoshi {
     @apply text-white;
-  }
-  
-  .dark .url_input, .dark .link_card, .dark .summary_box {
-    @apply bg-gray-800 border-gray-600;
-  }
-  
-  .dark .url_input::placeholder {
+}
+
+.dark .url_input, .dark .link_card, .dark .summary_box {
+    @apply bg-gray-900 border-gray-800; /* Making the backgrounds even darker */
+}
+
+.dark .url_input::placeholder {
     @apply text-white;
-  }
-  
-  .dark .submit_btn {
+}
+
+.dark .submit_btn {
     @apply text-white hover:text-black hover:bg-white;
-  }
+}
+
 
 .gradient {
   height: fit-content;

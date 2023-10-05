@@ -1,5 +1,5 @@
-import Hero from "../src/components/Hero"
-import Demo from "../src/components/Demo"
+import Hero from "./components/Hero"
+import Demo from "./components/demo"
 import "./App.css"
 
 const App = () => {

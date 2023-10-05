@@ -1,6 +1,17 @@
 import { useState, useEffect } from "react";
 import { logo } from "../assets";
 
+/**
+ * The Hero component acts as the digital front door to the "Sumarize" platform.
+ * - Dynamic Theme Flexibility: At the touch of a button, users can effortlessly 
+ *   toggle between a soothing dark mode and a vibrant light mode, ensuring an optimal 
+ *   viewing experience tailored to individual preferences. This state is efficiently 
+ *   managed using React's useState and useEffect hooks, with preferences stored in local storage.
+ * - Brand Identity: The 'sumz' logo is displayed prominently, establishing identity and trust.
+ * - Transparency and Collaboration: A direct link to the app's GitHub repository promotes its open-source nature.
+ * - Clarity of Purpose: The headline and description succinctly convey the app's core functionality 
+ *   of transforming extensive articles into crisp summaries using OpenAI's GPT-4.
+ */
 const Hero = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -49,12 +60,13 @@ const Hero = () => {
       
       <h1 className="head_text">
         Summarize Articles with <br className="max-md:hidden"/>
-        <span className="orange_gradient"> OpenAI GPT-4</span>
+        <span className="orange_gradient">OpenAI GPT-4</span>
       </h1>
 
       <h2 className="desc">
-        Simplify your reading with Sumarize, an open-source article summarizer that 
-        transforms lengthy articles into clear and concise summaries
+        Simplify your reading with Sumarize. Dive deep into the world of concise content, 
+        as we leverage the capabilities of OpenAI's GPT-4 to transform lengthy articles 
+        into crystal-clear summaries.
       </h2>
     </header>
   );

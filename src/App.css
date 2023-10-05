@@ -38,27 +38,25 @@
   filter: invert(1);
 }
 
-/* Dark Mode styles */
-.dark .main:before {
-    background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #1a1a1a 100%);
+.dark {
+    background-color: #000;
   }
   
-  .dark .desc, .dark .link_card p, .dark .summary_box p {
-    @apply text-gray-300;
+  .dark .text-black, .dark .text-gray-600, .dark .text-gray-400, .dark .text-blue-700, .dark .font-inter, .dark .font-satoshi {
+    @apply text-white;
   }
   
   .dark .url_input, .dark .link_card, .dark .summary_box {
     @apply bg-gray-800 border-gray-600;
   }
   
+  .dark .url_input::placeholder {
+    @apply text-white;
+  }
+  
   .dark .submit_btn {
-    @apply text-gray-400;
+    @apply text-white hover:text-black hover:bg-white;
   }
-  
-  .dark .blue_gradient {
-    @apply bg-gradient-to-r from-blue-300 to-cyan-300;
-  }
-  
 
 .gradient {
   height: fit-content;

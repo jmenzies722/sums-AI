@@ -1,52 +1,57 @@
+import { useState, useEffect } from "react";
 import { logo } from "../assets";
 
-
-
 const Hero = () => {
-    const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-    useEffect(() => {
-      const savedMode = localStorage.getItem("darkMode");
-      if (savedMode === "true") {
-        setDarkMode(true);
-        document.documentElement.classList.add('dark');
-      }
-    }, []);
-  
-    const toggleDarkMode = () => {
-      setDarkMode(prev => !prev);
-      if (!darkMode) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem("darkMode", "true");
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem("darkMode", "false");
-      }
-    };
-  
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode === "true") {
+      setDarkMode(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(prev => !prev);
+    if (!darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem("darkMode", "true");
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem("darkMode", "false");
+    }
+  };
+
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
         <img src={logo} alt="sumz logo" className="w-28 object-contain" />
+        
+        <div className="flex space-x-4">
+          <button
+            type="button"
+            onClick={toggleDarkMode}
+            className="black_btn"
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
 
-        <>
-      <button onClick={toggleDarkMode}>
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
-      // ... rest of the JSX
-
-        <button
-          type="button"
-          onClick={() => window.open("https://github.com")}
-          className="black_btn"
-        >
-          GitHub
-        </button>
+          <button
+            type="button"
+            onClick={() => window.open("https://github.com")}
+            className="black_btn"
+          >
+            GitHub
+          </button>
+        </div>
       </nav>
+      
       <h1 className="head_text">
         Summarize Articles with <br className="max-md:hidden"/>
         <span className="orange_gradient"> OpenAI GPT-4</span>
       </h1>
+
       <h2 className="desc">
         Simplify your reading with Sumarize, an open-source article summarizer that 
         transforms lengthy articles into clear and concise summaries
@@ -54,7 +59,5 @@ const Hero = () => {
     </header>
   );
 };
-
-
 
 export default Hero;
